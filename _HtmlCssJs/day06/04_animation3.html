@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes jump{
+            0%{
+                bottom: 0;       
+            }
+            25%{
+                bottom: 15px;       
+            }
+            50%{
+                bottom: 0;       
+            }
+            75%{
+                bottom: 30px;       
+            }
+            100%{
+                bottom: 0;   
+            }
+
+        }
+        .ani{
+            animation-name: jump;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="ani">hihihi</div>
+</body>
+</html>

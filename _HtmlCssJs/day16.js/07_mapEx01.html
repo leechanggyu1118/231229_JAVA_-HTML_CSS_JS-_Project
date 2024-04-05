@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 2개 생성 => 과목, 점수
+        map에 추가
+        출력 => map을 출력 ul => li 형태로 출력 html : 89
+        결과 => 합계, 평균, 합격여부(60이상이면 합격) =>h3
+     -->
+     <form action="">
+
+     과목 : <input type="text" id="subject"><br>
+     점수 : <input type="number" id="score"><br>
+     <button type="button" id="insert">추가</button>
+     <button type="button" id="print">출력</button>
+     <button type="button" id="result">결과</button>
+     <ul id="printMap"></ul>
+     <h3 id="final"></h3>
+
+    </form>
+     <script>
+         let str = ``;
+         const myMap = new Map();
+         let sum = 0;
+         let evg = 0;
+         let result = '';
+
+         
+         document.getElementById('insert').addEventListener('click',()=>{
+            let subject = document.getElementById('subject').value;
+            let score = document.getElementById('score').value;
+            myMap.set(subject, score);
+            console.log(myMap);
+        });
+
+        document.getElementById('print').addEventListener('click',()=>{
+            // (v : values) (i: keys) (s: map 자체 => 찍으면 객체가 나온다)
+            myMap.forEach(function(v,i){
+                str +=`<li>${i} : ${v}</li>`;
+            })
+            
+            document.getElementById('printMap').innerHTML =
+            str
+        });
+
+        document.getElementById('result').addEventListener('click',()=>{
+            myMap.forEach(function(v,i){
+               sum += Number(v);
+            })
+            evg = (sum/myMap.size).toFixed(2);
+
+            if(evg>=60){
+                result = '합격';
+            }else{
+                result = '불합격';
+            }
+
+            document.getElementById('final').innerHTML =
+            `과목의 점수합계 : ${sum}, 평균 : ${evg}, 합격여부 : ${result}`;
+
+        });
+
+     </script>
+</body>
+</html>

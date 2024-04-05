@@ -1,0 +1,235 @@
+body{
+    min-width: 1200px;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+header>.mid{
+    height: 50px;
+}
+header a{
+    color: black;
+}
+header .mid>ul{
+    margin: 50px;
+    margin-left: 200px;
+}
+header .top>ul{
+    line-height: 40px;
+}
+header>a{
+    width: 100px;
+    height: 70px;
+}
+header ul{
+    display: flex;
+}
+header ul>li{
+    margin: auto 20px;
+}
+section>img{
+    width: 100%;
+}
+.con-box{
+    padding: 30px;
+}
+
+main>.con1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+.con1{
+    width: 100%;
+    height: 82px;
+}
+.con1>a>p{
+    text-align: center;
+    line-height: 52px;
+    margin-left: 30px;
+    color: black;
+}
+.con1>a>p>img{
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+.con1>a{
+    display: flex;
+    justify-content: center;
+}
+.con1>a>div{
+    display: flex;
+    margin-left: 30px;
+    color: black;
+}
+.con1>a>div>p{
+    margin-left: 20px;
+    line-height: 52px;
+}
+.con2{
+    width: 100%;
+    height: 800px;
+    background-image: url(../day09/img/전시\ 배경.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-weight: 700;
+}
+.con2>p{
+   text-align: center;
+   font-size: 35px;
+   margin-bottom: 50px;
+   margin-top: 30px;
+   font-weight: 500;
+}
+.con2>.sub{
+    font-size: 15px;
+}
+.con2>.box>a>img{
+    width: 574px;
+    height: 502px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.con2>.box>a{
+    color: white;
+    margin: 20px;
+    text-align: center;
+}
+.con2>.box{
+    display: flex;
+    justify-content: center
+
+}
+.con3{
+    width: 100%;
+    height: 626px;
+    background-image: url(../day09/img/프로그램\ 배경.jpg);
+}
+.con3>p{
+    margin-top: 30px;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.con3>.sub{
+    font-size: 15px;
+}
+.con3>div{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    
+}
+.con3>div>a{
+    margin-left: 40px;
+}
+.con3 img{
+    width: 302px;
+    height: 200px;
+}
+.con3 a>div{
+    width: 302px;
+    height:77px;
+    background-color: white;
+    text-align: center;
+    line-height: 77px;
+    font-size: 20px;
+    color: black;
+}
+.con4{
+    width: 100%;
+    height: 790px;
+}
+.con4>.outer>div{
+    text-align: center;
+    padding: 40px;
+    font-weight: 500px;
+}
+.con4>.outer{
+   line-height: 90px;
+   margin-top: 30px;
+   font-weight: 500;
+}
+.con4>.outer>div>.main{
+    font-size: 35px;
+}
+.con4 .sub{
+    font-size: 18px;
+    color: gray;
+}
+.con4 .left{
+    width: 466px;
+    height: 396px;
+    border: 1px solid gray;
+    padding: 40px;
+}
+.con4 p{
+    font-weight: 700;
+    font-size: 25px;
+}
+.con4 .left>p{
+    display: flex;
+    justify-content: space-between;
+}
+.con4 .left>p>a{
+    color: gray;
+    font-size: 15px;
+    margin-right: 15px;
+}
+.con4 .left>p>a>img{
+    margin-left: 15px;
+}
+.con4 .left>p{
+    margin-top: 30px;
+}
+.con4 .left>.tit{
+    font-size: 20px;
+    margin-bottom: 70px;
+}
+.con4 .date{
+    font-size: 15px;
+    color: gray;
+}
+.con4 .box{
+    display: flex;
+    justify-content: space-around;
+}
+.con4 .left>ul{
+    border: 1px solid gray;
+    margin-top: 30px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+.con4 .left>ul>li{
+    margin-top: 30px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.con4 .right>div>a{
+    display: block;
+    width: 276px;
+    height: 188px;
+    color: black;
+    border: 1px solid gray;
+    text-align: center;
+    margin-left: 15px;
+}
+.con4 .right>div>a>img{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.con4 .right>.top{
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,15 @@
+package EzenToto;
+
+import java.util.Scanner;
+
+public class VolleyballManager {
+	
+	public void volleyBallStart(Scanner sacn) {
+		System.out.println("베팅할 팀을 선택해주세요!");
+		
+	}
+	
+	
+	
+
+}

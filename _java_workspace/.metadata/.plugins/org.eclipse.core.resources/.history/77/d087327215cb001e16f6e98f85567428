@@ -1,0 +1,31 @@
+package 시험;
+
+
+public class CardPack2 {
+	
+	private Card2[] cardPack = new Card2[52];
+	private int cnt = 0;
+	
+	public CardPack2() {
+		
+		for(int i = 1; i<=4; i++) {
+			char shape = '♥';
+		
+			switch(i){
+			case 1: shape = '♥'; break;
+			case 2: shape = '◆'; break;
+			case 3: shape = '♣'; break;
+			case 4: shape = '♠'; break;
+		}
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

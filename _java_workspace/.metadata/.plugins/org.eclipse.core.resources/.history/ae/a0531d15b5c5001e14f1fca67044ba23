@@ -1,0 +1,107 @@
+package EzenToto;
+import java.util.Scanner;
+
+public class 홀짝Manager {
+	
+	
+	
+	private int hmoney;
+	private String result;
+	private int pay;
+	
+	public 홀짝Manager() {}
+	
+	public 홀짝Manager(int hmoney) {
+		this.hmoney = hmoney;
+	}
+
+	public void hz(Scanner scan) {
+		int menu1 = 0;
+		String menu2 = null;
+		
+		do {
+			
+			System.out.println("메뉴를 선택하세요.");
+			System.out.println("1. 게임 규칙 설명 | 2. 게임 시작( 배팅) | 3.종료");
+			menu1 = scan.nextInt();
+			
+			
+			switch(menu1) {
+			case 1: 
+				System.out.println("======게임 규칙======");
+				System.out.println("홀짝은 상대 손에 쥔 구슬 개수가 홀수인지 짝수인지 맞히면 따는 간단한 게임이다."
+						+ "'홀' 또는 '짝'을 선택하면 된다.");
+				break;
+			case 2:
+				
+				System.out.println("배팅 금액을 입력하세요.");
+				pay = scan.nextInt();
+				
+				
+				do {
+					System.out.println("'홀' 또는 '짝'을 입력하세요.");
+					System.out.println("'종료'를 입력하면 종료합니다.");
+					menu2 = scan.next();
+				switch(menu2) {
+				case "홀" : break;
+				case "짝" : break;
+				case "종료" :
+					System.out.println("종료합니다.");
+					break;
+				default: 
+					System.out.println("잘못 입력하셨습니다.");
+					break;
+					
+					
+					System.out.println("결과 생성 중....");
+					int a = (int)(Math.random()*2)+1;
+					String result = ((a == 1)? "홀": "짝");
+					
+					System.out.println(result);
+					
+					if(menu2 == result) {
+						System.out.println("축하합니다! 맞추셨습니다.");
+						System.out.println("두 배의 배팅비가 지급됩니다.");
+						
+					}else if( menu2 != result) {
+						System.out.println("꽝! ");
+					}
+					
+				}
+			}while(menu2 != "종료");
+				
+				
+				}
+					
+				
+//
+		}while(menu1 != 3);
+//		
+	
+
+	}
+
+
+	public int getHmoney() {
+		return hmoney;
+	}
+
+
+
+	public void setHmoney(int hmoney) {
+		this.hmoney = hmoney;
+	}
+	
+	
+
+
+	
+
+}
+
+
+
+
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        height: 30px;
+        width: 30px;
+        margin-top: 2px;
+        text-align: center;
+        background-color: beige;
+    }
+    button:hover{
+        background-color: brown;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="area top">
+            <button type="button" value="7" onclick="cal(7)">7</button>
+            <button type="button" value="8" onclick="cal(8)">8</button>
+            <button type="button" value="9" onclick="cal(9)">9</button>
+            <button type="button" value="+" id="+" onclick="cal('+')">+</button>
+            <button type="button" value="C" id="re">C</button><br>
+            <button type="button" value="4" onclick="cal(4)">4</button>
+            <button type="button" value="5" onclick="cal(5)">5</button>
+            <button type="button" value="6" onclick="cal(6)">6</button>
+            <button type="button" value="-" id="-" onclick="cal('-')">-</button><br>
+            <button type="button" value="1" onclick="cal(1)">1</button>
+            <button type="button" value="2" onclick="cal(2)">2</button>
+            <button type="button" value="3" onclick="cal(3)">3</button>
+            <button type="button" value="*" id="*" onclick="cal('*')">*</button><br>
+            <button type="button" value="." id="." onclick="cal('.')">.</button>
+            <button type="button" value="0" onclick="cal(0)">0</button>
+            <button type="button" value="=" id="=" onclick="cal('=')">=</button>
+            <button type="button" value="/" id="/" onclick="cal('/')">/</button><br>
+        </div>
+        <h1 id="printResult"></h1>
+    </div>
+    <script>
+        document.querySelector('.container').addEventListener('click',(e)=>{
+            console.log(e.target.value);
+        });
+        
+        document.getElementById('re').addEventListener('click',()=>{
+        result = '';
+        prevNum = '';
+        nextNum = '';
+        operNum = '';
+            document.getElementById('printResult').innerHTML = '';
+        });
+        
+        let result = '';
+        let prevNum = '';
+        let nextNum = '';
+        let operNum = '';
+
+        function cal(num){
+           
+          if(num == '='){
+              result = operlater(prevNum,operNum,nextNum);
+          }
+          
+          if((num == '+')){
+              operNum = '+';
+            }else if((num == '-')){
+                operNum = '-';
+            }else if((num == '*')){
+                operNum = '*';
+            }else if((num == '/')){
+                operNum = '/';
+            }
+                       
+            if(operNum == ''){
+                prevNum += num;
+            }else{
+                nextNum += num;
+            }
+           
+            document.getElementById('printResult').innerHTML = 
+            `${prevNum}${nextNum}${result}`;
+            
+        }
+
+
+        function operlater(prevNum,operNum,nextNum){
+            switch (operNum) {
+                case '+':
+                    return Number(prevNum) + Number(nextNum);
+                    break;
+
+                case '-':
+                    return Number(prevNum) - Number(nextNum);
+                    break;
+
+                case '*':
+                    return Number(prevNum) * Number(nextNum);
+                    break;
+
+                case '/':
+                    return Number(prevNum) / Number(nextNum);
+                    break;
+            }
+
+        }
+
+
+        
+        
+
+
+    </script>
+</body>
+</html>

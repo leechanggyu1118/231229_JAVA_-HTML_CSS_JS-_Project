@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        성적확인
+        이름:홍길동
+        국어:input
+        영어:input
+        수학:input
+        성적계산 버튼
+        -------------------------------
+        이름:홍길동
+        국어:80
+        영어:90
+        수학:80
+        합계:oo
+        평균:oo 표시
+     -->
+     <form action="">
+        <fieldset>
+            <legend>성적확인</legend>
+            name: <input type="text" id="name"><br>
+            kor: <input type="number" id="kor"><br>
+            eg: <input type="number" id="eg"><br>
+            math: <input type="number" id="math"><br>
+            <button type="button" onclick="chectSubject()">성적확인</button>
+        </fieldset>
+     </form>
+
+     <ul id="check"></ul>
+
+     <script>
+        const check = document.getElementById('check');
+
+        let name = document.getElementById('name');
+        let kor = document.getElementById('kor');
+        let eg = document.getElementById('eg');
+        let math = document.getElementById('math');
+
+        function chectSubject(){
+            let korVal = Number(kor.value);
+            let egVal = Number(eg.value);
+            let mathVal = Number(math.value);
+            let sum = (korVal+egVal+mathVal);
+            let evg = (sum/3);
+            check.innerHTML = `<li>name : ${name.value}</li>`;
+            check.innerHTML += `<li>kor : ${korVal}점</li>`;
+            check.innerHTML += `<li>eg : ${egVal}점</li>`;
+            check.innerHTML += `<li>math : ${mathVal}점</li>`;
+            check.innerHTML += `<li>합계 : ${sum}점 </li>`;
+            check.innerHTML += `<li>평균 : ${evg}점 </li>`;
+        }
+     </script>
+</body>
+</html>

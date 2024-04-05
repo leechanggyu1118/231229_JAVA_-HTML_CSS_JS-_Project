@@ -1,0 +1,72 @@
+package EzenToto;
+
+import java.util.ArrayList;
+
+public class JoinMembership { //회원가입
+	private String userID;
+	private String userPassWord;
+	private String userName;
+	private int money = 0; 
+	private ArrayList<Integer> m = new ArrayList<Integer>();
+	
+	public JoinMembership() {}
+
+	public JoinMembership(String userID, String userPassWord, String userName) {
+		
+		this.userID = userID;
+		this.userPassWord = userPassWord;
+		this.userName = userName;
+	}
+	
+	//금액충전
+		public void inmoney(int money) {
+			this.money = this.money + money;
+			for(int i=0; i<m.size(); i++) {
+				m.add(i, this.money);
+			}
+			
+		}
+		
+		//출금
+		public void outmoney(int money) {
+			this.money = this.money - money;
+			for(int i=0; i<m.size(); i++) {
+				m.add(i, this.money);
+			}
+				
+		}
+
+		
+		public int getMoney() {
+			return money;
+		}
+
+		public void setMoney(int money) {
+			this.money = money;
+		}
+	
+	public String getUserID() {
+		return userID;
+	}
+
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+
+	public String getUserPassWord() {
+		return userPassWord;
+	}
+
+	public void setUserPassWord(String userPassWord) {
+		this.userPassWord = userPassWord;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+}

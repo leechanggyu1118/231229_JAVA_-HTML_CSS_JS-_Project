@@ -1,0 +1,8 @@
+package EzenToto;
+
+public class Volleyball {
+	
+	private int betting;
+	private String result;
+
+}

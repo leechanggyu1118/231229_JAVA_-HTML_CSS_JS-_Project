@@ -1,0 +1,28 @@
+package EzenToto;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class VolleyballManager {
+	
+	
+	private ArrayList<Volleyball> volleyBallGame = new ArrayList<Volleyball>();
+	private Volleyball game = new Volleyball();
+	
+	
+	public void volleyBallStart(Scanner sacn) {
+		game.todayVolleyBallGame();
+		
+		System.out.println("베팅할 팀을 선택해주세요!");
+//		for(Volleyball game  ) {
+//			
+//		}
+		
+		
+		
+	}
+	
+	
+	
+
+}

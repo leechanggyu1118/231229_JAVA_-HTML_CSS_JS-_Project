@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 구구단 문제  -->
+    <h1>
+        <button type="button" id="startBtn">문제출제</button>    
+    </h1>
+
+    <!-- ol에 li를 넣으면 됨 -->
+    <ol id="q"></ol> 
+    
+    <h1>
+        <button type="button" id="compareBtn">정답확인</button>
+    </h1>
+    <h3 id="printRatio"></h3>
+
+
+    <script>
+        const ansObj={};
+        //반복문
+        // ansObj[`ans${i}`] = dan * incre;
+        let ok = 0;
+        
+        document.getElementById('startBtn').addEventListener('click',()=>{
+            document.getElementById('q').innerHTML = ''; //한번 더 누르면 초기화
+
+            for(let i=1; i<=10; i++){
+                
+                let dan = Math.floor(Math.random()*9)+1;
+                let incre = Math.floor(Math.random()*9)+1;              
+                ansObj[`ans${i}`] = dan * incre;
+
+                document.getElementById('q').innerHTML +=
+                `<li> ${dan} * ${incre}= <input type="text" id="check${i}"></li> `;
+            }
+            console.log(ansObj);
+        });
+
+        document.getElementById('compareBtn').addEventListener('click',()=>{
+
+            for(let i=1; i<=10; i++){
+                let userAns = document.getElementById(`check${i}`);
+
+               if(userAns.value == ansObj[`ans${i}`]){
+                   ok++;
+                userAns.style.backgroundColor = 'green';
+                userAns.value += '                 정답입니다!';
+            }else{
+                userAns.style.backgroundColor = 'red';
+                userAns.value += '                 오답입니다!';
+
+               }
+
+               let percentage = (ok/10)*100;
+
+               document.getElementById('printRatio').innerHTML =
+               `정답 개수 : ${ok}개 / 정답률 : ${percentage}% `;
+
+            }
+
+        });
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        button 2개 준비 + / -
+        + => 값이 1씩 증가
+        - => 값이 1씩 감소 (값이 0이면 더이상 감소X)
+     -->
+     <h1 id="number">0</h1>
+     <div>
+        <button id="incre">+</button>
+        <button id="decre">-</button>
+     </div>
+
+     <script>
+         let gap = document.getElementById('number').innerHTML;
+
+         document.getElementById('incre').addEventListener('click',()=>{
+            gap++;
+            document.getElementById('number').innerHTML =
+            `${gap}`;
+        });
+         document.getElementById('decre').addEventListener('click',()=>{
+            gap--;
+            if(gap<0){
+                gap = 0;
+            }
+            document.getElementById('number').innerHTML =
+            `${gap}`;
+        });
+     </script>
+</body>
+</html>

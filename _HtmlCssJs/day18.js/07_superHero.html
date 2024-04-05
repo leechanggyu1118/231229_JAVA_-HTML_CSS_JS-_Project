@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Black Han Sans", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        h1{
+            text-align: center;
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+        h2{
+            text-align: center;
+            font-size: 20px;
+        }
+        a{
+           
+           float: left;
+        }
+        div{
+           margin: 50px;
+            margin-bottom: 30px;
+        }
+        section{
+           display: flex;
+           justify-content: center;
+        }
+        section div span{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <!-- 
+        https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+     -->
+     <h1 id="head"></h1>
+     <h2 id="smallhead"></h2>
+     <section id="one"></section>
+     
+     
+     <script>
+        //document.getElementById('head').innerHTML =
+        fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+        .then(resp => resp.json())
+        .then(result => printDate(result))
+        .catch(err => console.log(err));
+
+        function printDate(obj){
+            console.log(obj);
+
+                head.innerHTML = obj.squadName;
+                smallhead.innerHTML = `homeTown : ${obj.homeTown} // Formed : ${obj.formed}`;
+
+                let members = obj.members;        
+                console.log(members);
+
+                let cnt = 0;
+                let str ='';
+                for(const k of members){
+                    str += `<div>
+                    <span>${k.name}<br></span>
+                    secretIdentity : ${k.secretIdentity}<br>
+                    age : ${k.age}<br>
+                    Superpowers : <ul>`;
+
+                    let powers = members[cnt].powers;
+                    for(const p of powers){
+                            str += `<li>${p}</li>`;
+                        }
+                        str +=  `</ul></div>`;
+                        document.getElementById('one').innerHTML = str;
+                        cnt++;
+                } 
+
+            
+        }
+
+
+
+     </script>
+</body>
+</html>

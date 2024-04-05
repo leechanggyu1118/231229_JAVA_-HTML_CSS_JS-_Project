@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        div{
+        width: 400px;
+        height: 35px; 
+        margin: 100px;
+        }
+        div>button{
+            background-color: transparent;
+            border: 0;
+            position: absolute;
+        }
+        .text{
+            width: 400px;
+            height: 35px;
+            border: 2px solid green;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 10px;
+        }
+        .keyboard{
+            font-size: 30px;  
+            margin-left: -170px;
+        }
+        .arrow{
+            font-size: 30px;
+            margin-left: -100px;
+        }
+        .search{
+            background-color: green;
+            color: white;
+            width: 40px;
+            height: 35px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            margin-left: -30px;
+            
+        }
+        div>button:hover{
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <form action="">
+    <div class="bar">
+            <input type="text" class="text a" placeholder="검색어를 입력해 주세요.">
+
+            <button type="button">
+                <span class="material-symbols-outlined keyboard a">
+                    keyboard
+                </span>
+            </button>
+            
+            <button type="button">
+                <span class="material-symbols-outlined arrow a">
+                    keyboard_arrow_down
+                </span>
+            </button>
+        
+            <button type="submit" class="search a">
+                <span class="material-symbols-outlined ">
+                    search
+                    </span>
+            </button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+package EzenToto;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class VolleyballManager {
+	
+	
+	
+	//배구 팀 종류
+	private ArrayList<String> VolleyballTeam = new ArrayList<String>();
+	
+	
+	public VolleyballManager() {}
+	
+	public void volleyBallStart(Scanner sacn) {
+		VolleyballTeam.add(null)
+		
+		System.out.println("배구베팅을 시작합니다!");
+		
+		do {
+			
+			
+		
+		
+			
+		}while();
+		
+		
+		
+	}
+	
+	
+	
+
+}

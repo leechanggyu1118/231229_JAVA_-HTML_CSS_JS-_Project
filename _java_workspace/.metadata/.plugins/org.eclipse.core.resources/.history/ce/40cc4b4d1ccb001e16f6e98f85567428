@@ -1,0 +1,41 @@
+package 시험;
+
+import java.util.Scanner;
+
+public class RandomNumber {
+
+	public static void main(String[] args) {
+		
+		/* 난수(random)의 개수를 입력받아 입력받은 개수만큼 난수를 생성하고,
+		  * 생성한 난수의 합을 출력하시오.
+		  */
+		Scanner scan = new Scanner(System.in);
+		
+		
+		int sum = 0;
+		
+		System.out.println("난수의 개수를 입력하세요.");
+		int a = scan.nextInt();
+		System.out.println("난수의 개수 : "+a);
+		
+
+		for(int i = 1; i<=a ;i++) {
+			int random = (int)(Math.random()*99)+0;
+			sum += random;
+		}
+		
+		
+		System.out.println("난수 7개의 합은 : "+sum);
+		
+		
+		
+		
+		
+		
+		
+		scan.close();
+		
+
+	}
+
+}

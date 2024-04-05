@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(12, 165, 114);
+        }
+        div{
+            text-align: center;
+        }
+        .login{
+            background-color: beige;
+            width: 300px;
+            height: 200px;
+            margin: auto;
+            border-radius: 7px;
+            margin-top: 200px
+            
+        }
+        .a{
+            width: 270px;
+            height: 30px;
+            margin-top: 10px;
+            border: 0px solid beige;
+            border-radius: 7px;
+
+        }
+        .login>.submit{
+            background-color: rgb(12, 165, 114);
+            color: white;
+            font-weight: 1000;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+        .login>.forget{
+            font-size: 12px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <form action="">
+            <div class="login">
+                <input type="text" name="id" class="id a text-field" placeholder=" 아이디">
+                <input type="password" name="pw" class="password a text-field" placeholder=" 비밀번호">
+                <button type="submit" class="submit a">로그인</button><br>
+                <a href="" class="forget">비밀번호를 잊어버리셨나요?</a>
+            </div>
+    </form>
+    <script>
+        // event 'input'
+        // ^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$ 
+        // (최소 8 자, 하나 이상의 문자, 하나의 숫자 및 하나의 특수 문자 정규식)
+        // disable = true => 비활성화
+        // disable = false => 활성화
+
+        document.querySelector('.password').addEventListener('input',()=>{
+            let reg = new RegExp(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/);          ;
+            let password =  document.querySelector('.password');
+            let login = document.querySelector('.sumit');
+            console.log(password.value);
+            console.log(reg.test(password.value));
+
+            if(reg.test(password.value)){
+                console.log('비밀번호 유효');
+                document.querySelector('.submit').disabled = false;        
+                // login.disable = false;
+                document.querySelector('.submit').style.setProperty('background-Color', 'rgb(12, 165, 114)');
+                // document.querySelector('.submit').style.backgroundColor = 'rgb(12, 165, 114)';
+            }else{
+                console.log('비밀번호 유효x');
+                document.querySelector('.submit').disable = true;
+                document.querySelector('.submit').style.backgroundColor = 'red';
+                // login.disable = true;
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

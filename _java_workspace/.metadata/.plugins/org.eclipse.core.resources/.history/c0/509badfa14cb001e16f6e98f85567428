@@ -1,0 +1,22 @@
+package 시험;
+
+
+public class CardPack2 {
+	
+	private Card2[] cardPack = new Card2[52];
+	private int cnt = 0;
+	
+	public CardPack2() {
+		
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

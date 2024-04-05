@@ -1,0 +1,18 @@
+package EzenToto;
+
+import java.util.HashMap;
+
+public class Volleyball {
+	
+	private HashMap<String, String> volleyBallTeam = new HashMap<String, String>();
+	
+	public void team() {
+		volleyBallTeam.put("한국도로공사", "IBK기업은행");
+		volleyBallTeam.put("흥국생명", "정관장");
+		volleyBallTeam.put("GS칼텍스", "현대건설");
+		volleyBallTeam.put("IBK기업은행", "페퍼저축은행");
+		volleyBallTeam.put("정관장", "한국도로공사");
+	}
+	
+
+}

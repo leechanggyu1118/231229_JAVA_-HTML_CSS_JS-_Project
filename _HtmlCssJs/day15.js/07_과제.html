@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="eventFunc(1)"><img src="../day15.js/가위바위보사진/가위.png" alt=""><br>가위(1)</button>
+    <button type="button" onclick="eventFunc(2)"><img src="../day15.js/가위바위보사진/주먹.png" alt=""><br>바위(2)</button>
+    <button type="button" onclick="eventFunc(3)"><img src="../day15.js/가위바위보사진/보.png" alt=""><br>보(3)</button>
+    <h3>
+       --- player : <span id="player"></span> | <span id="now"></span><span id="com"></span> : com ---<br>
+        현재전적<br>
+        승 : <span id="win"></span> / 무 : <span id="same"></span> / 패 : <span id="lose"></span> <br>
+        승률 : <span id="result"></span>%입니다
+    </h3>
+
+    <script>
+        //누적 변수 선언.
+        let win = 0;
+        let lose = 0;
+        let same = 0;
+        let result;
+        let cnt = 0;
+
+        function rand() {
+            return Math.floor(Math.random() * 3) + 1;
+        }
+
+        function eventFunc(player) { //onclick에 매개변수를 줄 수 있다.
+            let com = rand();
+            // console.log(player +" / "+com);
+            switch (com) {
+                case 1: (player==1)? same++ : (player==2)? win++:lose++      
+                    break;
+                case 2: (player==2)? same++ : (player==3)? win++:lose++      
+                    break;
+                case 3: (player==3)? same++ : (player==1)? win++:lose++      
+                    break;
+            }
+            
+            let whatPlay = '';
+            if(player ==1){
+                whatPlay = '가위';
+            }else if(player ==2){
+                whatPlay = '바위';
+            }else if(player ==3){
+                whatPlay = '보';
+            }
+            let whatCom = '';
+            if(com ==1){
+                whatCom = '가위';
+            }else if(com ==2){
+                whatCom = '바위';
+            }else if(com ==3){
+                whatCom = '보';
+            }
+            cnt++;
+
+
+            document.getElementById('player').innerHTML = `${whatPlay}`;
+            document.getElementById('com').innerHTML = `${whatCom}`;
+            document.getElementById('win').innerHTML = `${win}`
+            document.getElementById('same').innerHTML = `${same}`
+            document.getElementById('lose').innerHTML = `${lose}`
+            result = (win / (cnt-same))*100;
+            document.getElementById('result').innerHTML = `${result.toFixed(2)}`
+        }
+
+    </script>
+
+</body>
+
+</html>

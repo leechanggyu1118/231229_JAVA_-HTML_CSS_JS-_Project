@@ -1,0 +1,18 @@
+package EzenToto;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class VolleyballManager {
+	
+	private HashMap<String, String> volleyBallTeam = new HashMap<String, String>();
+	
+	public void volleyBallStart(Scanner sacn) {
+		System.out.println("베팅할 팀을 선택해주세요!");
+		
+	}
+	
+	
+	
+
+}

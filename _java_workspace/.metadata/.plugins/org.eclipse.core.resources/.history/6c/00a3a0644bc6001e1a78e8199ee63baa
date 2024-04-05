@@ -1,0 +1,10 @@
+package EzenToto;
+
+import java.util.HashMap;
+
+public class Volleyball {
+	
+	private HashMap<String, String> volleyBallTeam = new HashMap<String, String>();
+	
+
+}

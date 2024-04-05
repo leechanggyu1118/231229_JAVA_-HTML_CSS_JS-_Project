@@ -1,0 +1,66 @@
+package 시험;
+
+public class Card2 {
+	
+	private int num;
+	private char shape;
+	
+	public Card2() {
+		this.num = 1;
+		this.shape = '♥';
+	};
+	
+	
+	public void printCard() {
+		System.out.println(shape);
+		
+		
+		
+	}
+	
+	
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		if(num>0 && num<14) {
+			this.num = num;
+		}else {
+			num = 1;
+		}
+	}
+
+	public char getShape() {
+		return shape;
+	}
+
+	public void setShape(char shape) {
+		this.shape = shape;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

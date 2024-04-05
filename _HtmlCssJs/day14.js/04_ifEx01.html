@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>오늘은??</h1>
+    <button type="button" id="btn" onclick="todayCheck()">Today</button>
+    <h3 id="result">
+        <!-- 오늘 날짜와 요일 출력 -->
+        <!-- 2024. 03. 19.(화) -->
+    </h3>
+    <script>
+        function todayCheck(){
+            let today = new Date();
+            let todayDate = today.toLocaleDateString();
+            let todayDay = today.getDay();
+            switch (todayDay) {
+                case 0: todayDay = '일'; break;
+                case 1: todayDay = '월'; break;
+                case 2: todayDay = '화'; break;
+                case 3: todayDay = '수'; break;
+                case 4: todayDay = '목'; break;
+                case 5: todayDay = '금'; break;
+                case 6: todayDay = '토'; break;
+            }
+            document.getElementById('result').innerText =
+            `${todayDate}(${todayDay})`;
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100%;
+        }
+        .header{
+            height: 60px;
+            background-color: gray;
+            color: black;
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .header>.title{
+            margin-left: 10px;
+        }
+        .main-img{
+            background-image: url(../image/main.jpg);
+            height: 600px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .subject{
+            background-image: url(../image/subject.jpg);
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .content{
+            background-image: url(../image/content.jpg);
+            height: 150px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .sub{
+            background-image: url(../image/sub.jpg);
+            height: 75px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+           
+        }
+        .footer{
+            background-image: url(../image/footer.jpg);
+            height: 75px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        @media screen and (min-width: 800px){
+            .header{
+                height: 60px;
+            }
+            .main-img{
+                background-image: url(../image/main_800.jpg);
+                height: 600px;
+
+            }
+            .subject{
+                background-image: url(../image/subject_800.jpg);
+                height: 300px;
+            }
+            .content{
+                background-image: url(../image/content_800.jpg);
+                width: 50%;
+                float: left;
+
+            }
+            .sub{
+                background-image: url(../image/sub_800.jpg);
+                width: 50%;
+                float: right;
+                text-align: center;
+            }
+            .sub>a{
+                font-size: 30px;
+                color: white;
+                border: 1px solid white;
+                line-height: 75px;
+                text-decoration: none;
+            }
+            .footer{
+                background-image: url(../image/footer_800.jpg);
+                width: 50%;
+                float: right;
+
+            }
+            
+        }
+        @media screen and (min-width: 1280px){
+            .header{
+                height: 60px;
+            }
+            .main-img{
+                background-image: url(../image/main_1280.jpg);
+                height: 900px;
+                width: 50%;
+                float: left;
+            }
+            .subject{
+                background-image: url(../image/subject_1280.jpg);
+                height: 450px;
+                width: 50%;
+                float: left;
+            }
+            .content{
+                background-image: url(../image/content_1280.jpg);
+                width: 25%;
+                float: left;
+                height: 450px;
+            }
+            .sub{
+                background-image: url(../image/sub_1280.jpg);
+                width: 25%;
+                float: right;
+                height: calc(450px / 2);
+                text-align: center;
+            }
+            .sub>a{
+                font-size: 30px;
+                color: white;
+                border: 1px solid white;
+                line-height: 225px;
+                text-decoration: none;
+            }
+            .footer{
+                background-image: url(../image/footer_1280.jpg);
+                width: 25%;
+                float: right;
+                height: 450px;
+                height: calc(450px / 2);
+
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><div class="title">IN'O</div></div>
+    <div class="main-img"></div>
+    <div class="subject"></div>
+    <div class="content"></div>
+    <div class="sub">
+        <a href="">VIEW MORE</a>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>

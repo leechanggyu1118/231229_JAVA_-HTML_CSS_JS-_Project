@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set을 이용한 로또 만들기</title>
+</head>
+<body>
+    <h1>
+        1~45까지 중복되지 않게 숫자 6개 랜덤으로 추출 => 출력
+        set 객체를 사용하여 생성
+    </h1>
+    <button type="button" id="user">랜덤번호 6자리 생성(출력)</button>
+    <h1 id="userNum"></h1>
+
+    <button type="button" id="com">당첨번호 7자리(마지막번호는 보너스번호)생성(출력)</button>
+    <h1 id="comNum"></h1>
+
+    <button type="button" id="check">결과확인</button>
+    <h1 id="checkNum"></h1>
+
+    <script>
+        const userNum = new Set();
+        const comNum = new Set();
+        document.getElementById('user').addEventListener('click',()=>{
+            let str = [];
+            while(userNum.size != 6){
+                let r = Math.floor(Math.random()*45)+1;
+                userNum.add(r);
+            }
+            
+           userNum.values().forEach(function(v){
+            str.push(v);
+        })
+        
+        document.getElementById('userNum').innerHTML =
+        `${str}`;
+        });
+
+        document.getElementById('com').addEventListener('click',()=>{
+            let str = [];
+            while(comNum.size != 7){
+                let r = Math.floor(Math.random()*45)+1;
+                if(comNum.size == 6){
+                    r=`[${r}]`;
+                }
+                comNum.add(r);
+            }
+
+           comNum.values().forEach(function(v){
+            
+            str.push(v);
+        })
+        
+
+        document.getElementById('comNum').innerHTML =
+        `${str}`;
+        });
+
+        document.getElementById('check').addEventListener('click',()=>{
+            let userStr = [];
+            let comStr = [];
+            let cnt = 0;
+            userNum.keys().forEach(function(v){
+                userStr.push(v);
+            })
+
+            comNum.keys().forEach(function(v){
+                comStr.push(v);
+            })
+            console.log(userStr);
+            console.log(comStr);
+           
+            comStr.forEach(function(c){
+                userStr.forEach(function(u){
+                    if(c == u){
+                        cnt++;
+                    }
+                })
+            })
+            console.log(cnt);
+
+            // for(let i = 0; i<comStr.size;i++){
+            //     console.log(111);
+            //     console.log(userNum.has(comStr[0]));
+            //     if(userNum.has(comStr[i])){
+            //         cnt++;
+            //     }
+            // }
+
+            switch (cnt) {
+                case 0: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 꽝입니다!`;
+                      break;
+                case 1: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 꽝입니다!`;
+                      break;
+                case 2: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 5등입니다!`;
+                      break;
+                case 3: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 4등입니다!`;
+                      break;
+                case 4: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 3등입니다!`;
+                      break;
+                case 5: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 2등입니다!`;
+                      break;
+
+                case 6: document.getElementById('checkNum').innerHTML =
+                    `당첨된 번호 갯수 : ${cnt}개! 1등입니다!`;
+                      break;
+            
+                default:
+                    break;
+            }
+            
+
+        });
+
+    </script>
+
+</body>
+</html>

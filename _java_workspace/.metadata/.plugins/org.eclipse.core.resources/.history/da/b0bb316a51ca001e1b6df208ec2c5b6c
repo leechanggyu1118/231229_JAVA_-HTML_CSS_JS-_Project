@@ -1,0 +1,276 @@
+package EzenToto;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class 경마 {
+	
+	
+	JoinMembership user = LoginManager.loginUser;	//로그인유저 데이터 값 사용
+	
+	private int horse; // 말
+	private int price; // 금액
+	private double dividend; // 배당
+	public int money = 0; // 돈
+	public double money1 = 0; // 투입금액에 배당을 곱하고 투입금액을 뺀 값. 실질적으로 얻는 이득
+	
+	// 말 리스트
+	private ArrayList<경마> list = new ArrayList<경마>();
+	
+	// 생성자
+	public 경마() { // 기본 생성자
+		
+	}
+	
+	public 경마(int horse, int price, double dividend) {
+		this.horse = horse;
+		this.price = price;
+		this.dividend = dividend;
+	}
+	
+	// 말 선택 메서드
+	public void add(Scanner scan) {
+		int menu = 0;
+		do {
+			System.out.println("경마 게임");
+			System.out.println("1. 설명서 | 2. 배당표 확인 | 3. 게임 시작 | 4. 이전 메뉴");
+			menu = scan.nextInt();
+			
+		switch(menu) {
+		
+		case 1: {
+			System.out.println("설명서");
+			System.out.println("말을 선택한 후 금액을 배팅합니다.");
+			System.out.println("말마다 배율이 다른 대신, 배율이 높은 말은 이길 확률이 적습니다.");
+			break;
+		}
+		case 2:
+			System.out.println("-----------배당표-------------");
+			System.out.println(" 1번마 (우승확률: 30%) : 1.5배  ");
+			System.out.println(" 2번마 (우승확률: 20%) :  2 배  ");
+			System.out.println(" 3번마 (우승확률:  7%) :  3 배  ");
+			System.out.println(" 4번마 (우승확률:  3%) :  4 배  ");
+			System.out.println(" 5번마 (우승확률: 15%) : 2.5배  ");
+			System.out.println(" 6번마 (우승확률: 25%) : 1.8배  ");
+			System.out.println("----------------------------");
+			break;
+		
+		case 3: 
+		if (user.getAccount()>0){
+		
+			System.out.println("선택마 (1~6번마 숫자만 입력) >");
+			horse = scan.nextInt();
+			if (horse>=1 && horse<=6) {
+				System.out.println("투입 금액 >");
+				price = scan.nextInt();
+
+				switch(horse) {
+				case 1: dividend = 1.5;
+				break;
+				case 2: dividend = 2;
+				break;
+				case 3: dividend = 3;
+				break;
+				case 4: dividend = 4;
+				break;
+				case 5: dividend = 2.5;
+				break;
+				case 6: dividend = 1.8;
+				break;
+				}
+				경마 s = new 경마(horse, price, dividend);
+				list.add(s);
+				System.out.println("말 선택 완료");
+				System.out.println("------------------- 마표 --------------------");
+				for (int i=0; i<list.size(); i++) {
+					System.out.println(list.get(i)+" ");
+					
+				}
+				System.out.println("-------------------------------------------");
+		
+			System.out.println("게임 시작");
+			System.out.println("경마가 시작되었습니다. 말들이 달립니다.");
+			double random = (double)(Math.random()*10)+0;
+//			System.out.println("랜덤값: "+random);
+			if (random>0 && random<=3) {
+				System.out.println("1번마 1등!!");
+			}
+			
+			if(random>3 && random<=5) {
+				System.out.println("2번마 1등!!");
+			}
+			
+			if (random>5 && random<=5.7) {
+				System.out.println("3번마 1등!!");
+			}
+			
+			if (random>5.7 && random<=6) {
+				System.out.println("4번마 1등!!");
+			}
+			
+			if (random>6 && random<=7.5) {
+				System.out.println("5번마 1등!!");
+			}
+			
+			if (random>7.5 && random<=10) {
+				System.out.println("6번마 1등!!");
+			}
+			
+			for (int i=0; i<list.size(); i++) {
+			
+				money1 = 
+				((int)list.get(i).getPrice() * list.get(i).getDividend()-list.get(i).getPrice());
+				// 투입금액에 배당을 곱하고 투입금액을 뺀 값. 실질적으로 얻는 이득
+			
+				if (random>0 && random<=3) {
+				if (list.get(i).getHorse() == 1) {
+					System.out.println("투입 금액: "+list.get(i).getPrice());
+					System.out.println("수령액: "+(int)(list.get(i).getPrice() * list.get(i).getDividend()));
+					money = (int) (user.getAccount() + money1);
+				}
+				else {
+					System.out.println("선택하신 "+list.get(i).getHorse()+"번 말은 1등이 아닙니다.");
+					System.out.println("잃은 금액: "+ list.get(i).getPrice());
+					money = user.getAccount() - list.get(i).getPrice();
+					
+				}
+			} else if(random>3 && random<=5) {
+				if (list.get(i).getHorse() == 2) {
+					System.out.println("투입 금액: "+list.get(i).getPrice());
+					System.out.println("수령액: "+(int)(list.get(i).getPrice() * list.get(i).getDividend()));
+					money = (int) (user.getAccount() + money1);
+					
+				}
+				else {
+					System.out.println("선택하신 "+list.get(i).getHorse()+"번 말은 1등이 아닙니다.");
+					System.out.println("잃은 금액: "+ list.get(i).getPrice());
+					money = user.getAccount() - list.get(i).getPrice();
+				}
+				
+			} else if (random>5 && random<=5.7) {
+				if (list.get(i).getHorse() == 3) {
+					System.out.println("투입 금액: "+list.get(i).getPrice());
+					System.out.println("수령액: "+(int)(list.get(i).getPrice() * list.get(i).getDividend()));
+					money = (int) (user.getAccount() + money1);
+					
+				}
+				else {
+					System.out.println("선택하신 "+list.get(i).getHorse()+"번 말은 1등이 아닙니다.");
+					System.out.println("잃은 금액: "+ list.get(i).getPrice());
+					money = user.getAccount() - list.get(i).getPrice();
+					
+				}
+				
+			} else if (random>5.7 && random<=6) {
+				if (list.get(i).getHorse() == 4) {
+					System.out.println("투입 금액: "+list.get(i).getPrice());
+					System.out.println("수령액: "+(int)(list.get(i).getPrice() * list.get(i).getDividend()));
+					money = (int) (user.getAccount() + money1);
+					
+				}
+				else {
+					System.out.println("선택하신 "+list.get(i).getHorse()+"번 말은 1등이 아닙니다.");
+					System.out.println("잃은 금액: "+ list.get(i).getPrice());
+					money = user.getAccount() - list.get(i).getPrice();
+					
+				}
+			
+			} 
+			else if (random>6 && random<=7.5) {
+				if (list.get(i).getHorse() == 5) {
+					System.out.println("투입 금액: "+list.get(i).getPrice());
+					System.out.println("수령액: "+(int)(list.get(i).getPrice() * list.get(i).getDividend()));
+					money = (int) (user.getAccount() + money1);
+					
+				}
+				else {
+					System.out.println("선택하신 "+list.get(i).getHorse()+"번 말은 1등이 아닙니다.");
+					System.out.println("잃은 금액: "+ list.get(i).getPrice());
+					money = user.getAccount() - list.get(i).getPrice();
+					
+				}
+				
+			} else if (random>7.5 &&random<10) {
+				if (list.get(i).getHorse() == 6) {
+					System.out.println("투입 금액: "+list.get(i).getPrice());
+					System.out.println("수령액: "+(int)(list.get(i).getPrice() * list.get(i).getDividend()));
+					money = (int) (user.getAccount() + money1);
+				}
+				else {
+					System.out.println("선택하신 "+list.get(i).getHorse()+"번 말은 1등이 아닙니다.");
+					System.out.println("잃은 금액: "+ list.get(i).getPrice());
+					money = user.getAccount() - list.get(i).getPrice();
+				}
+				
+			}
+				list.get(i).setMoney(money);
+				user.setAccount(money);
+				System.out.println("총 금액: " + user.getAccount());
+				list.remove(i).getHorse();
+		}
+			
+			
+	} else System.out.println("1~6번마만 존재합니다.");
+			break;
+	}else System.out.println("파산!"); // case2 끝.
+		
+		
+		case 4:
+			System.out.println("이전 메뉴");
+			break;
+		default :
+			System.out.println("1~3만 입력");
+			break;
+		}
+} while (menu != 4);
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "선택마: "+ horse +"번마 / 투입 금액: "+ price + "(배당: X" + dividend+ ") / 예상 총 수령액: " + (int)(price*dividend);
+	}
+
+	// getter / setter
+	public int getHorse() {
+		return horse;
+	}
+
+	public void setHorse(int horse) {
+		this.horse = horse;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public double getDividend() {
+		return dividend;
+	}
+
+	public void setDividend(double dividend) {
+		this.dividend = dividend;
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+	public ArrayList<경마> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<경마> list) {
+		this.list = list;
+	}
+
+	
+}

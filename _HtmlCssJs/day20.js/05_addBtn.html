@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="con">
+    <button type="button" id="make">엘리먼트 만들기</button>
+    </div>
+    <script>
+        let make = document.getElementById('con');
+        document.getElementById('make').addEventListener('click',()=>{
+            make.innerHTML += `<br><button id=made>생성된 버튼</button>`;
+            //이 위치에서는 made인식
+
+            // document.getElementById('made').addEventListener('click',()=>{
+            //     make.innerHTML += `<h1>생성된 버튼 클릭</h1>`;
+            // });
+
+        });
+        // 밖에서는 made 인식불가능
+        // 동적으로 생성된 엘리먼트에 이벤트 부여
+        // 문저 전체에 리스너를 장착 엘리먼트 선택
+        document.addEventListener('click',(e)=>{
+            if(e.target.id == 'made'){
+                document.getElementById('con').innerHTML +=
+                `<h1>생성된 버튼 클릭</h1>`;
+            }
+        });
+
+    </script>
+</body>
+</html>

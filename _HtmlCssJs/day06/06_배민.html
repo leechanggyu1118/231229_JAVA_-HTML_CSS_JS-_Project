@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+<!-- font link -->
+<!-- 해당하는 css font-family 삽입 -->
+<style>
+    @font-face{
+        font-family: jua;
+        src: url(../font/Jua/Jua-Regular.ttf)
+
+    }
+
+</style>
+    <style>
+        header>h1{
+            font-size: 60px;
+        }
+        header>h3{
+            font-size: 30px;
+        }
+        body{
+            background-color: rgb(66, 201, 201);
+            text-align: center;
+            font-family: "Gugi", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        } 
+        
+        img{
+            width: 300px;
+            margin: 20px auto 30px;
+            border: 1px solid none;
+            border-radius: 10px 10px 0 0 ;  
+        }
+        .image{
+            position: absolute;
+        }
+        .ex{
+            width: 300px;
+            background-color: white;
+            font-size: 10px;
+            border-radius: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: 250px;
+            position: relative;
+        }
+        .menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image1{
+            position: absolute;
+        }
+        .ex1{
+            width: 300px;
+            background-color: white;
+            font-size: 10px;
+            border-radius: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: 250px;
+            position: relative;
+        }
+        .menu1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image2{
+            position: absolute;
+        }
+        .ex2{
+            width: 300px;
+            background-color: white;
+            font-size: 10px;
+            border-radius: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: 250px;
+            position: relative;
+        }
+        .menu2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image3{
+            position: absolute;
+        }
+        .ex3{
+            width: 300px;
+            background-color: white;
+            font-size: 10px;
+            border-radius: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: 250px;
+            position: relative;
+        }
+        .menu3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .image4{
+            position: absolute;
+        }
+        .ex4{
+            width: 300px;
+            background-color: white;
+            font-size: 10px;
+            border-radius: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            margin-top: 250px;
+            position: relative;
+        }
+        .menu4{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .pay{
+            color: blue;
+        }
+        .pay:hover{
+            color: blue;
+            cursor: pointer;
+        }
+        .click:hover{
+            transform: scale(1.2,1.2);
+            
+        }
+        div>img:hover{
+            box-shadow: 20px 20px 20px black;
+            transform: rotate(10deg);
+            
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <!-- 가로 300px -->
+    <header>
+        <div><img src="../image/아이콘_로고조합_인쇄용(고해상도_CMYK).png" alt="사진오류" class="logo"></div>
+        <h1>배달의 민족</h1>
+        <h3>넌 배달할 때가 제일 멋있어</h3>
+    </header>
+    <!-- 여기서부터 메뉴 -->
+    <div class="menu click">
+        <div class="image"><img src="../image/햄버거.jpg" alt="사진오류"></div>
+        <div class="ex">
+            <h3>베이컨 치즈버거</h3>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!!</p>
+            <p><del>15,000원</del>9,900원</p>
+            <p class="pay">바로결제</p>
+        </div>
+    </div>
+
+    <div class="menu1 click">
+        <div class="image"><img src="../image/피자.jpg" alt="사진오류"></div>
+        <div class="ex1">
+            <h3>버터치킨 피자</h3>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!!</p>
+            <p><del>30,000원</del>25,000원</p>
+            <p class="pay">바로결제</p>
+        </div>
+    </div>
+    <div class="menu2 click">
+        <div class="image"><img src="../image/치킨.jpg" alt="사진오류"></div>
+        <div class="ex2">
+            <h3>황금올리브 치킨</h3>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!!</p>
+            <p><del>20,000원</del>18,000원</p>
+            <p class="pay">바로결제</p>
+        </div>
+    </div>
+    <div class="menu3 click">
+        <div class="image"><img src="../image/스테이크.jpg" alt="사진오류"></div>
+        <div class="ex3">
+            <h3>살치살 스테이크</h3>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!!</p>
+            <p><del>40,000원</del>30,000원</p>
+            <p class="pay">바로결제</p>
+        </div>
+    </div>
+    <div class="menu4 click">
+        <div class="image"><img src="../image/스시.jpg" alt="사진오류"></div>
+        <div class="ex4">
+            <h3>사시미+초밥세트</h3>
+            <p>주머니가 가벼운 당신의 마음까지 생각한 착한 가격!!!</p>
+            <p><del>37,000원</del>29,900원</p>
+            <p class="pay">바로결제</p>
+        </div>
+    </div>
+</body>
+</html>
